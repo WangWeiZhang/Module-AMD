@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据不同需求解决模块引入的几种问题</title>
+	<script type="text/javascript" data-main="../response/config" src="../response/require.js"></script>
+	<!--
+		基于浏览器的模块化开发啊，require.js需事先下载好，然后通过data-main引入配置文件（在config.js下配置路径，加载模块）
+	-->
+</head>
+<body>
+	<button onclick="test()">点击我</button>
+	<script type="text/javascript">
+		/*  这个可以正常执行 因为页面加载后 这个方法体没有加载 当config异步加载结束之后 点击buttton后 执行test这时候 配置项 配置结束 就能够引入了  */
+		/*function test(){
+            require(['jquery','bootstrap','angular'],function($,bootstrap,angular) {
+                $("body").css({"backgroundColor":"#f00"});
+            })
+		}
+		 */
+
+
+//将test函数注释 在刷新 会发现 模块无法加载了
+						  //原因是 我们的的 配置文件 data-main=".......config.js"是异步加载的 当页面刷新后 reqiuire加载结束之后
+// 							config和当前script是一起同时加载的，也就是说页面加载后 配置还没有加载完 下面的引入就加载了
+// 							所以导致当前require无法找到jQuery bootstrap angular等模块
+//解决办法1、把路径写全，基于response目录 因为require是在这个目录
+//            require(['lib/jquery-1.11.3.min','lib/bootstrap.min','js/angular1-4-6'],function() {
+//				$("body").css({"backgroundColor":"#f00"});
+//            })
+//解决办法2、将test（）方法里面的代码 拷贝到 config.js文件配置项的下面。
+//
+//解决办法3、将data-main的引入方式去掉 重新使用script标签的src引入config.js 这样就是按顺序加载，可以加载完配置项在加载这个script标记
+
+
+
+	</script>
+</body>
+</html>
