@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模块化AMD开发练习</title>
+	<script type="text/javascript" data-main="../response/config" src="../response/require.js"></script>
+	<!--
+		基于浏览器的模块化开发啊，require.js需事先下载好，然后通过data-main引入配置文件（在config.js下配置路径，加载模块）
+	-->
+</head>
+<body>
+	<button onclick="test()">点击我</button>
+	<script type="text/javascript">
+        function test(){
+            /* 使用require引入刚刚config.js文件下配置好的模块 名字也是在config.js下配置好
+             * require（[引入一个数组，引入一个数组]，function(参数一，参数二){ 回调函数，也就是引入模块后就可以在回调中使用 }）
+            */
+            require(['jquery','bootstrap','angular'],function($,bootstrap,angular) {
+				$("body").css({"backgroundColor":"#f00"});
+            })
+
+        }
+
+	</script>
+</body>
+</html>
