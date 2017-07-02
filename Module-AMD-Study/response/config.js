@@ -23,6 +23,6 @@ require.config({
 *   那么找到原因 我们让script中的 引入文件 在配置项之后加载  就可以加载到了 岂不是？？？
 *   所以我们将 代码 拷贝到 config配置项文件中 放在 配置路径的下面 来执行
 * */
-require(['jquery','bootstrap','angular'],function($,bootstrap,angular) {
-    $("body").css({"backgroundColor":"#f00"});
-})
+// require(['jquery','bootstrap','angular'],function($,bootstrap,angular) {
+//     $("body").css({"backgroundColor":"#f00"});
+// })
