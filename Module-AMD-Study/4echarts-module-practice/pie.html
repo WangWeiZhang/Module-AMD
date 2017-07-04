@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块化开发echarts饼状图</title>
+    <script type="text/javascript" src="../response/require.js" data-main="../response/config"></script>
+</head>
+<body>
+<button onclick="test()">点击我</button>
+<div id="main" style="width:auto; height:500px;">jjkkj</div>
+<script type="text/javascript">
+    function test() {
+        require(["jquery","../app/echarts-demo"], function($,a) {
+            $(function(){
+                $("body").css({"backgroundColor":"red"});
+                $("#main").css({"backgroundColor":"#000"}).hide(1000).show(2000);
+            });
+            a.show();
+            a.change();
+        })
+    }
+
+
+</script>
+</body>
+</html>
