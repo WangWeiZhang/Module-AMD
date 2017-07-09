@@ -10,10 +10,19 @@ require.config({
     //baseUrl:'lib/',                 //注意这样写是加载不到的 因为baseUrl的基准是以 引入config的html文件为基准的
     baseUrl:'../response/lib',        //这样写则 能够加载成功以index.html为基准  注意和 paths的区别
     paths:{
+        'css':'css.min',
         'jquery':'jquery-1.11.3.min',     //定义一个模块
         'angular':'../js/angular1-4-6',
-        'bootstrap':'bootstrap.min'//定义一个模块 如果有多个模块需要使用 我们可以继续往下定义 使用json的格式就好
-
+        'bootstrap':'bootstrap.min',//定义一个模块 如果有多个模块需要使用 我们可以继续往下定义 使用json的格式就好
+        'util1':'../app/util1'
+    },
+    shim:{
+        'util1':{
+            exports:"modul"
+        },
+        'bootstrap':{
+            'deps':['jquery','css!../css/bootstrap.min.css','css!../css/font-awesome.min.css']
+        }
     }
 });
 

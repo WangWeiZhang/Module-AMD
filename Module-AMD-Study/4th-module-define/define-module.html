@@ -7,9 +7,24 @@
     <script type="text/javascript" src="../response/config.js"></script>
 </head>
 <body>
+	<div id="main">我是测试模块化开发Amd规范的demo标记0</div>
+    <div id="main1">我是测试模块化开发AMD规范的Demo标记1</div>
+    <div id="main2">我是测试模块化开发AMd规范的demo标记2</div>
 <script type="text/javascript">
-    require(["../app/uitl"],function(w){
+    require(["../app/uitl","jquery"],function(w,$){
         w.change();
+        w.show();
+//测试jQuery引入后 是否可以进行使用  我们将defined-module.html中三个div的文字颜色分别改写成 白色 绿色 和 蓝色
+            $("#main").css({"color":"#fff"});
+            $("#main1").css({"color":"#0f0"});
+            $("#main2").css({"color":"#00f"});
+//当然我们还可这样进行编写
+     /*     $(function(){
+            $("#main").css({"color":"#fff"});
+            $("#main1").css({"color":"#0f0"});
+            $("#main2").css({"color":"#00f"});
+            })
+     */
     });
 </script>
 </body>

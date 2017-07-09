@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用shim在config文件下建立依赖关系</title>
+    <script type="text/javascript" src="../response/require.js" ></script>
+    <script type="text/javascript" src="../response/config.js"></script>
+</head>
+<body>
+    <div>
+    <i class="fa fa-eercast fa-5x" aria-hidden="true"></i>
+    </div>
+<script type="text/javascript">
+    require(["bootstrap"],function(b){
+        $(function(){
+            $("body").append("<div>我是王维张</div>");
+            $("div").css({"backgroundColor":"#f00"});
+        })
+    });
+</script>
+</body>
+</html>

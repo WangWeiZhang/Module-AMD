@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>非标准化的模块引用 老的function函数式的模块</title>
+    <script type="text/javascript" src="../response/require.js" ></script>
+    <script type="text/javascript" src="../response/config.js"></script>
+</head>
+<body>
+<!--在app文件夹下 新建一个 非标准化的文件模块 util1.js-->
+    <div>
+    <i class="fa fa-eercast fa-5x" aria-hidden="true"></i>
+    </div>
+<script type="text/javascript">
+    require(['util1'],function(b){
+        b();
+    });
+</script>
+</body>
+</html>
